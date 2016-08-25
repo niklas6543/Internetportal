@@ -1,0 +1,143 @@
+html{
+	font-family:sans-serif;
+	-ms-text-size-adjust:100%;
+	-webkit-text-size-adjust:100%
+}
+
+
+h1,h2 {
+	color: green;
+}
+
+.button {
+    background-color: #4CAF50;
+    border: none;
+    color: white;
+    padding: 10px 24px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+	box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+}
+
+.button:hover {
+    background-color: #008CBA;
+}
+
+.warnings {
+	color: red;
+	font-style: Arial;
+	border-style: dashed;
+	border-radius: 5px;
+	border-size: 16px;
+	padding: 10px 20px;
+}
+
+body {
+    background-color: lightblue;
+}
+
+.th {
+    background-color: #4CAF50;
+    color: white;
+}
+
+@keyframes marquee {
+	0%   { text-indent: 0% }
+	100% { text-indent: 100% }
+ }
+
+.marquee {
+	width: 100%;
+	margin: auto;
+	padding: 2px;
+	overflow: hidden;
+	white-space: nowrap;
+
+	animation: marquee 10s linear infinite;
+}
+
+.marquee:hover {
+ animation-play-state: paused;
+}
+
+
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #4CAF50;
+}
+
+li {
+	float: left;
+	border-right: 1px solid #bbb;
+}
+
+li:last-child {
+	border-right: none;
+	border-left: 1px solid #bbb;
+}
+
+li a, .foot {
+	display: block;
+	color: white;
+	text-align: center;
+	text-decoration: none;
+	padding: 14px 16px;
+}
+
+li a:hover {
+	background-color: #008CBA;
+}
+
+.footer {
+	position: fixed;
+	bottom: 0;
+	text-align: center;
+	top: auto;                             
+	left: 2px;
+	right: 2px;
+}
+
+.active {
+	background-color: #008CBA;
+}
+
+
+.div {
+	width: 64px;
+	height: 64px;
+	xborder-style: solid;
+	display: inline-block;
+	position: relative;
+	line-height: 64px;
+	text-align: center;
+}
+
+.img {
+	vertical-align: middle;
+	margin: auto;
+	left: 0;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	position: absolute;;
+}
+
+.chat {
+	width: 500px;
+	height: 500px;
+	background-color: #4CAF50;
+	overflow-y: auto;
+	border-style: solid;
+}
+
+textarea {
+	width: 500px;
+	height: 70px;
+}

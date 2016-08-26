@@ -72,7 +72,7 @@
 		}
 	}
 	
-	if ($_GET['delete'])
+	if (array_key_exists('delete', $_GET))
 	{
 		$sql->delete('images','id=? and userid=?', [$_GET['delete'], $id]);
 		header("Location: index.php?modus=bild_laden");

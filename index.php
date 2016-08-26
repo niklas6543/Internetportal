@@ -1,19 +1,29 @@
 <?php
 	session_start();
-
+	//error_reporting(0);
 	/*echo '<xmp>';
 	print_r($_SERVER);
 	echo '<xmp>';
 	*/
-	if (!$_SESSION["login"])
+	if (!isset($_SESSION["login"]))
 	{
 		require('php/login.php');
 		$modus='willkommen';	
 	}
 
-	if ($_SESSION["login"])
+	if (isset($_SESSION["login"]))
 	{
-		$modus = $_GET['modus']; 
+		if (!array_key_exists('modus', $_GET))
+		{
+			$modus='willkommen';		
+			
+		}else
+		{
+			$modus = $_GET['modus']; 
+			
+		}
+		
+		
 		
 		if ($modus == 'ajax')
 		{
@@ -33,11 +43,7 @@
 		}
 
 		require('php/functions/navbar.php');
-		
-		if (!$modus)
-		{		
- 			$modus='willkommen';
-		}
+				
 		
 		$sites=[
 			['name' => 'willkommen', 'src' => 'php/willkommen.php'],

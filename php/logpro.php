@@ -7,20 +7,20 @@
 	$id = $_SESSION["id"];
 	$smarty = new Smarty;
 	$error = '';
-	
+	$field_error = '';
 
 	$fields = [
-	   [ 'label' => 'Vorname', 'name' => 'firstname', 'type' => 'text'],
-	   [ 'label' => 'Nachname', 'name' => 'name', 'type' => 'text'],
-	   [ 'label' => 'Benutzername', 'name' => 'user', 'type' => 'text'],
-	   [ 'label' => 'Passwort', 'name' => 'paswd', 'type' => 'password'],
-	   [ 'label' => 'Passwort<br/>wiederholen', 'name' => 'paswd_wd', 'type' => 'password'],
+	   [ 'label' => 'Vorname', 'name' => 'firstname', 'type' => 'text', 'value' => ''],
+	   [ 'label' => 'Nachname', 'name' => 'name', 'type' => 'text', 'value' => ''],
+	   [ 'label' => 'Benutzername', 'name' => 'user', 'type' => 'text', 'value' => ''],
+	   [ 'label' => 'Passwort', 'name' => 'paswd', 'type' => 'password', 'value' => ''],
+	   [ 'label' => 'Passwort<br/>wiederholen', 'name' => 'paswd_wd', 'type' => 'password', 'value' => ''],
     ];
 
 														  
 	if (isset($_POST["create"]))
 	{
-		$field_error = '';
+		
 
 		
 		foreach ($fields as &$field)
@@ -30,7 +30,7 @@
 			if (empty($field['value']))
 			{
 					$field_error = 'field_missing';
-					$smarty->assign("field_error",$field_error);
+					
 			}
 
 		}
@@ -50,8 +50,6 @@
 		{
 			$error = 'password_disagree';
 		}
-	
-
 
 	}
 	if (isset($_POST['reset']) || $error == 'without_error')
@@ -61,7 +59,9 @@
 			$field['value'] = '';
 		}
 	}
-	$smarty->assign('fields',$fields);
+	
+	
+	$smarty->assign('fields',$fields);	
 	$smarty->assign('field_error',$field_error);
 	$smarty->assign("error",$error);
 	$smarty->display('templates/logpro.tpl');

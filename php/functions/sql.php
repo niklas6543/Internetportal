@@ -1,7 +1,7 @@
 <?php
 
 class MySQL 
-{
+{	
 	function __construct($host, $user, $passwd, $db)
 	{
 		$this->host = $host;

@@ -1,7 +1,5 @@
 <?php
 
-	session_start();
-
 	require('include/smarty/Smarty.class.php');
 
 	require_once('php/functions/sql.php');

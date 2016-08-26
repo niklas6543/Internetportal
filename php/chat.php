@@ -11,7 +11,14 @@
 	
 	$smarty->assign("id", $id);
 
-	$receiver = $_SESSION['chatReceiver'];
+	if (isset($_SESSION['chatReceiver']))
+	{
+		$receiver = $_SESSION['chatReceiver'];	
+	}else
+	{
+		$receiver = '';
+	}
+	
 	if (isset($_POST['send']))
 	{
 		$receiver = $_POST['user'];

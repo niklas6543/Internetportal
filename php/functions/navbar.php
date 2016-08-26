@@ -11,7 +11,17 @@
 	];
 
 	$smarty= new Smarty;
- 	$modus = $_GET['modus'];
+	
+	if (!array_key_exists('modus', $_GET))
+	{
+		$modus='willkommen';		
+		
+	}else
+	{
+		$modus = $_GET['modus']; 
+		
+	}
+	
 	$smarty->assign("modus",$modus);
 	$smarty->assign("fields",$fields);
   	$smarty->display("templates/navbar.tpl");

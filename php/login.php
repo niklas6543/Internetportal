@@ -63,7 +63,7 @@
 				$_SESSION["user"]=$rows[0]['user'];
 				$_SESSION["vorname"]=$rows[0]['vorname'];
 				$_SESSION["nachname"]=$rows[0]['nachname'];
-				$_SESSION["b_day"]=$rows[0]['b_day'];
+				$_SESSION["b_day"]=$rows[0]['Geburtsdatum'];
 				$lastlogin = date( 'Y-m-d H:i:s');
 				$sql->updateById('user', ['lastlogin' => $lastlogin], $id);
 				$_SESSION["lastlogin"]=$lastlogin;
